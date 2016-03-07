@@ -45,7 +45,7 @@ function addTank() {
 }
 
 function move() {
-    
+
 }
 
 function damage() { //an array that counts damage points
@@ -59,3 +59,34 @@ function remove() {
 function speed() { //a multiplier
 
 }
+
+
+var Car = function () {
+    Vehicle.call(this); //this calls the parent's constructor - when setting up a child class, you have to call the parent class - DO THIS FIRST
+}
+Car.prototype = Object.create(Vehicle.prototype); //YOU MUST DO THIS FOR EVERY NEW SUBCLASS - DO THIS 2ND - IT MAKES A COPY OF THE PARENT PROTOTYPE
+Car.prototype.constructor = Car; // YOU MUST DO THIS FOR EVERY NEW SUBCLASS -DO THIS 3RD
+
+
+
+var CopCar = function () {
+    Vehicle.call(this);
+}
+CopCar.prototype = Object.create(Vehicle.prototype);
+CopCar.prototype.constructor = CopCar;
+
+
+
+var Motorcycle = function () {
+    Vehicle.call(this);
+}
+Motorcycle.prototype = Object.create(Vehicle.prototype);
+Motorcycle.prototype.constructor = Motorcycle;
+
+
+
+var Tank = function () {
+    Vehicle.call(this);
+}
+Tank.prototype = Object.create(Vehicle.prototype);
+Tank.prototype.constructor = Tank;                
